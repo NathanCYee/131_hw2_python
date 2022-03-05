@@ -12,9 +12,5 @@ def calculate_time(func):
     return wrapper
 
 
-@calculate_time
-def test():
-    time.sleep(5)
-
-
-test()
+def timeit(func):
+    return calculate_time(func)
