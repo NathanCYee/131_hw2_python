@@ -6,7 +6,7 @@ def calculate_time(func):
         start_time = time.time()
         output = func(*args, **kwargs)
         end_time = time.time()
-        print(f"Total time {end_time - start_time}")
+        print(f"Total time: {end_time - start_time}")
         return output
 
     return wrapper
