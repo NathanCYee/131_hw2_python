@@ -10,9 +10,9 @@ def count_words(input_str: str) -> dict:
     return counted_words
 
 
-f = open('document.txt')
-vals = count_words(f.read())
-# sort from most to least first(negative) then by lexicographic order in tuple
-sorted_words = sorted(vals.items(), key=lambda i: (-i[1], i[0]))
-for i in range(0, 5):
-    print(f"{sorted_words[i][0]}: {sorted_words[i][1]}")
+with open('document.txt') as f:  # open the file
+    vals = count_words(f.read())
+    # sort from most to least first(negative) then by lexicographic order in tuple
+    sorted_words = sorted(vals.items(), key=lambda val: (-val[1], val[0]))
+    for i in range(0, 5):
+        print(f"{sorted_words[i][0]}: {sorted_words[i][1]}")
